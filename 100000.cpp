@@ -6,18 +6,19 @@ using namespace std;
 
 int main()
 {
-	const  long arraysize = 500000;
-	long *n = new long[arraysize];  
-	n[0] = 1;
-	int base = 10;
-	long i, j, flag;
-	for (i = 1; i < arraysize; i++) 
-		n[i] = 0;
+	const  long arraysize = 500000; //because it has more than 450000 digits (460-480 ~~)
+	long *n = new long[arraysize];  // for each digit place
+	n[0] = 1; 
+	int base = 10; // decimal numeration
+	long i, j, flag; 
+	for (i = 1; i < arraysize; i++)  
+		n[i] = 0;  
+	
 	flag = 1;
 	for (i = 0; i <100000; i++)
 	{
 		for (j = 0; j < flag; j++)
-			n[j] *= (i + 1);
+			n[j] *= (i + 1);	
 		for (j = 0; j < arraysize - 1; j++)
 		if (n[j] >= base) {
 			n[j + 1] += n[j] / base;
@@ -39,7 +40,7 @@ int main()
 
 	printf("\n");
 	delete[] n;
-	cout <<"final time: "clock() / 1000.0<<endl;
-	system("pause");
+	cout <<"final time: "clock() / 1000.0<<endl; //display runtime
+	system("pause"); 
 	return 0;
 }
