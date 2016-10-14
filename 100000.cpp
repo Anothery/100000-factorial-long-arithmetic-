@@ -40,7 +40,7 @@ int main()
 
 	printf("\n");
 	delete[] n;
-	cout <<"final time: "clock() / 1000.0<<endl; //display runtime
+	cout <<"final time: " << clock() / 1000.0<<endl; //display runtime
 	system("pause"); 
 	return 0;
 }
